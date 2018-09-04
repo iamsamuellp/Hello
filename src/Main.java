@@ -1,20 +1,27 @@
-import java.util.Date;
+// filename Main.java
+class Grandparent {
+    public void printMe() {
+        System.out.println("Grandparent");
+    }
+}
+
+class Parent extends Grandparent {
+    public void printMe() {
+        super.printMe();
+        System.out.println("Parent");
+    }
+}
+
+class Child extends Parent {
+    public void printMe() {
+        super.printMe();
+        System.out.println("Child");
+    }
+}
 
 public class Main {
-
     public static void main(String[] args) {
-
-        System.out.println("Hello World!");
-        System.out.println("Hello Samuel Lp");  //this is going to be fun
-        System.out.println("this is my second line of code");
-        System.out.println(new Date());
-
-        int year = 2018;
-        int birthYear = 1987;
-        String name = "my name is Samuel Lp";
-
-        int count = 2_147_483_647;
-        String height = "5ft 8in";
-
+        Child c = new Child();
+        c.printMe();
     }
 }
